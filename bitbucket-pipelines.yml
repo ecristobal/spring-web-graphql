@@ -15,10 +15,4 @@ pipelines:
         caches:
           - maven
         script:
-          - mvn -B sonar:sonar \
-              -Dsonar.projectKey=ecristobalr_spring-web-graphql \
-              -Dsonar.organization=ecristobalr-bitbucket \
-              -Dsonar.host.url=https://sonarcloud.io \
-              -Dsonar.login=848c76bf762d90171480c5ada87ac3b1a6c73d5e \
-              -Dsonar.exclusions=**/spring/*.java,**/*Exception.java \
-              -Dsonar.branch.name=$BITBUCKET_BRANCH
+          - mvn -B sonar:sonar -Dsonar.projectKey=ecristobalr_spring-web-graphql -Dsonar.organization=ecristobalr-bitbucket -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=848c76bf762d90171480c5ada87ac3b1a6c73d5e -Dsonar.exclusions=**/spring/*.java,**/*Exception.java -Dsonar.branch.name=$BITBUCKET_BRANCH
