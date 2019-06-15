@@ -1,0 +1,16 @@
+image: maven:3.6.0-jdk-8-alpine
+
+pipelines:
+  default:
+    - step:
+        name: Maven Install
+        caches:
+          - maven
+        script:
+          - mvn -B install
+          - mvn sonar:sonar \
+              -Dsonar.projectKey=ecristobalr_spring-web-graphql \
+              -Dsonar.organization=ecristobalr-bitbucket \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.login=848c76bf762d90171480c5ada87ac3b1a6c73d5e \
+              -Dsonar.exclusions=**/spring/*.java,**/*Exception.java
