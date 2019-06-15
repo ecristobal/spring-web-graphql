@@ -3,12 +3,12 @@ image: maven:3.6.0-jdk-8-alpine
 pipelines:
   default:
     - step:
-        name: Maven Install
+        name: Compile
         caches:
           - maven
         script:
           - mvn -B install
-          - mvn sonar:sonar \
+          - mvn -B sonar:sonar \
               -Dsonar.projectKey=ecristobalr_spring-web-graphql \
               -Dsonar.organization=ecristobalr-bitbucket \
               -Dsonar.host.url=https://sonarcloud.io \
