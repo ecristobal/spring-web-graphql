@@ -1,0 +1,13 @@
+language: java
+
+jdk: oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.sonar/cache
+
+install: true
+script:
+  - mvn clean install
+  - mvn sonar:sonar -Dsonar.projectKey=ecristobal_spring-web-graphql -Dsonar.organization=ecristobal-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=$TRAVIS_BRANCH
