@@ -9,3 +9,5 @@ pom.xml.*Backup
 *.lck
 transaction-logs/
 .factorypath
+.idea/
+*.iml
